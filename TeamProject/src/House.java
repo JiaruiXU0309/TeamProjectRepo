@@ -5,10 +5,22 @@ public class House {
     public House(int total) {
         gifts = new Gift[total];
     }
+
     private boolean isFull() {
         return total == gifts.length;
     }
-    private boolean isEmpty(){
+
+    private boolean isEmpty() {
         return total == 0;
+    }
+
+    public boolean add(Gift gift) {
+        if (isFull()) {
+            return false;
+        } else {
+            gifts[total] = gift;
+            total++;
+            return true;
+        }
     }
 }
