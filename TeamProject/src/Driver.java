@@ -14,10 +14,34 @@ public class Driver {
 
     private void processOrder(){
         //prologue开场白
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){}
         System.out.println("Christmas is coming.");
+
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){}
         System.out.println("Each family member have prepared gifts for each other.");
+
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){}
         System.out.println("Now please control each character to hide their gifts for each other.");
+
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){}
         System.out.println("Which character do you want to control now? :)");
+
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){}
         chooseCharacterMenu();
 
         int userCharacter = input.nextInt();
