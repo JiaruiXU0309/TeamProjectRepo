@@ -14,10 +14,10 @@ public class Driver {
 
     private void processOrder(){
         //prologue开场白
-        System.out.print("Christmas is coming." +
-                "Each family member have prepared gifts for each other." +
-                "Now please control each character to hide their gifts for each other.");
-        System.out.print("Which character do you want to control now? :)");
+        System.out.println("Christmas is coming.");
+        System.out.println("Each family member have prepared gifts for each other.");
+        System.out.println("Now please control each character to hide their gifts for each other.");
+        System.out.println("Which character do you want to control now? :)");
         chooseCharacterMenu();
 
         int userCharacter = input.nextInt();
