@@ -19,9 +19,9 @@ public class Driver {
         while (option != 0) {
 
             switch (option) {
-                case 1 -> test();
+                case 1 -> hideGifts();
                 case 2 -> test();
-                case 3 -> chooseCharacterMenu();
+                case 3 -> characterMenu();
                 default -> System.out.println("Invalid option entered: " + option);
             }
             System.out.println("\nPress enter key to continue...");
@@ -53,7 +53,7 @@ int chosenCharacter;
         prologue();//see on Line 76
 
 
-        chooseCharacterMenu();
+        characterMenu();
 
         System.out.println("\nPress enter key to continue...");
         input.nextLine();
@@ -65,7 +65,7 @@ int chosenCharacter;
         }
     }
 
-        private void chooseCharacterMenu() {
+    private void characterMenu() {
             System.out.print("""
                     Character Menu
                     ---------
@@ -78,11 +78,11 @@ int chosenCharacter;
             chosenCharacter = input.nextInt();
         }
 //////////////////////////////////////////////////////////////////////////////////
-        private void test(){
+    private void test(){
             System.out.println("Need to be created");
         }
 //////////////////////////////////////////////////////////////////////////////////
-        private void prologue(){
+    private void prologue(){
             try {Thread.sleep(1000);}
             catch (Exception e) {}
             System.out.println("Christmas is coming.");
@@ -102,5 +102,23 @@ int chosenCharacter;
             try {Thread.sleep(1000);}
             catch (Exception e) {}
         }
+///////////////////////////////////////////////////////////////////////////////////
+int chosenLocation;
+    private void hideGifts(){
+
+    }
+
+    private void locationMenu(){
+        System.out.print("""
+                    Location Menu
+                    ---------
+                       1) Under the Christmas tree
+                       2) By the hearth
+                       3) On the shelf
+                       4) Behind the sofa cushion
+                       0) Exit
+                   ==>> """);
+        chosenLocation = input.nextInt();
+    }
 }
 
