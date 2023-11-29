@@ -75,7 +75,7 @@ int chosenCharacter;
                        4) Youngest child
                        0) Exit
                    ==>> """);
-            int chosenCharacter = input.nextInt();
+            chosenCharacter = input.nextInt();
         }
 //////////////////////////////////////////////////////////////////////////////////
         private void test(){
