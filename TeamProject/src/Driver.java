@@ -21,6 +21,7 @@ public class Driver {
             switch (option) {
                 case 1 -> test();
                 case 2 -> test();
+                case 3 -> chooseCharacterMenu();
                 default -> System.out.println("Invalid option entered: " + option);
             }
             System.out.println("\nPress enter key to continue...");
@@ -40,22 +41,31 @@ public class Driver {
                ---------
                   1) Hide gifts
                   2) find gifts
+                  3) Exchange the character
                   0) Exit
                ==>> """);
         int option = input.nextInt();
         return option;
     }
 //////////////////////////////////////////////////////////////////////////////////
-        private void chooseCharacter () {
-            prologue();//see on Line 76
+int chosenCharacter;
+    private void chooseCharacter () {
+        prologue();//see on Line 76
 
-            int chosenCharacter = chooseCharacterMenu();
-            if (chosenCharacter == 0){
-                System.out.println("Exiting...bye");
-                System.exit(0);            }
+
+        chooseCharacterMenu();
+
+        System.out.println("\nPress enter key to continue...");
+        input.nextLine();
+        input.nextLine();
+
+        if (chosenCharacter == 0) {
+            System.out.println("Exiting...bye");
+            System.exit(0);
         }
+    }
 
-        private int chooseCharacterMenu() {
+        private void chooseCharacterMenu() {
             System.out.print("""
                     Character Menu
                     ---------
@@ -65,8 +75,7 @@ public class Driver {
                        4) Youngest child
                        0) Exit
                    ==>> """);
-            int character = input.nextInt();
-            return character;
+            int chosenCharacter = input.nextInt();
         }
 //////////////////////////////////////////////////////////////////////////////////
         private void test(){
