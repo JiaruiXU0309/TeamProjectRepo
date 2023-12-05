@@ -153,6 +153,7 @@ public class Driver {
                     4) Behind the sofa cushion
                     5) Other places that you think can be used to hide
                 """);
+        input.nextLine();
         String location = input.nextLine();
 
         boolean isHidden = house.add(new Gift(giver, receiver, content, wrapper, shape, prize, location));
