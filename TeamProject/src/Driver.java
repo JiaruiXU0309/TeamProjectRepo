@@ -12,7 +12,7 @@ public class Driver {
         runMenu();
     }
 
-//////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////
     private void runMenu() {
         int option = mainMenu();
 
@@ -35,21 +35,23 @@ public class Driver {
         System.exit(0);
     }
 
-    private int mainMenu(){
+    private int mainMenu() {
         System.out.print("""
-               What do you want to do?🎅
-               ---------
-                  1) Hide gifts
-                  2) find gifts
-                  3) Exchange the character
-                  0) Exit
-               ==>> """);
+                What do you want to do?🎅
+                ---------
+                   1) Hide gifts
+                   2) find gifts
+                   3) Exchange the character
+                   0) Exit
+                ==>> """);
         int option = input.nextInt();
         return option;
     }
-//////////////////////////////////////////////////////////////////////////////////
-int chosenCharacter;
-    private void chooseCharacter () {
+
+    //////////////////////////////////////////////////////////////////////////////////
+    char chosenCharacter;
+
+    private void chooseCharacter() {
         prologue();//see on Line 76
 
 
@@ -66,43 +68,41 @@ int chosenCharacter;
     }
 
     private void characterMenu() {
-            System.out.print("""
-                    Character Menu
-                    ---------
-                       1) Father
-                       2) Mother
-                       3) Eldest child
-                       4) Youngest child
-                       0) Exit
-                   ==>> """);
-            chosenCharacter = input.nextInt();
+        System.out.print("""
+                 Character Menu
+                 ---------
+                    1) Father
+                    2) Mother
+                    3) Eldest child
+                    4) Youngest child
+                    0) Exit
+                ==>> """);
+        chosenCharacter = input.next().charAt(0);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////
+    private void test() {
+        System.out.println("Need to be created");
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////
+    private void prologue() {
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
         }
-//////////////////////////////////////////////////////////////////////////////////
-    private void test(){
-            System.out.println("Need to be created");
+        System.out.println("Christmas is coming.");
+
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
         }
-//////////////////////////////////////////////////////////////////////////////////
-    private void prologue(){
-            try {Thread.sleep(1000);}
-            catch (Exception e) {}
-            System.out.println("Christmas is coming.");
+        System.out.println("Each family member has prepared gifts for each other.");
 
-            try {Thread.sleep(1000);}
-            catch (Exception e) {}
-            System.out.println("Each family member has prepared gifts for each other.");
-
-            try {Thread.sleep(1000);}
-            catch (Exception e) {}
-            System.out.println("Now please control each character to hide their gifts for each other.");
-
-            try {Thread.sleep(1000);}
-            catch (Exception e) {}
-            System.out.println("Which character do you want to control now? :)");
-
-            try {Thread.sleep(1000);}
-            catch (Exception e) {}
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
         }
-<<<<<<< HEAD
         System.out.println("Now please control each character to hide their gifts for each other.");
 
         try {
@@ -118,14 +118,17 @@ int chosenCharacter;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-=======
-///////////////////////////////////////////////////////////////////////////////////
-int chosenLocation;
->>>>>>> parent of f60b9d3 (create hideGifts and addGifts methods)
     private void hideGifts(){
+        System.out.print("How many Gifts would you like to give?  ");
+        int numberGifts = input.nextInt();
 
+        house = new House(numberGifts);
+
+        //ask the user for the details of the products and add them to the order
+        for (int i = 0; i < numberGifts; i++){
+            addGifts();
+        }
     }
-<<<<<<< HEAD
 
     private void addGifts() {
         input.nextLine();
@@ -177,20 +180,3 @@ int chosenLocation;
         System.out.println(house.listSpecificProduct(location));
     }
 }
-=======
-
-    private void locationMenu(){
-        System.out.print("""
-                    Location Menu
-                    ---------
-                       1) Under the Christmas tree
-                       2) By the hearth
-                       3) On the shelf
-                       4) Behind the sofa cushion
-                       0) Exit
-                   ==>> """);
-        chosenLocation = input.nextInt();
-    }
-}
-
->>>>>>> parent of f60b9d3 (create hideGifts and addGifts methods)

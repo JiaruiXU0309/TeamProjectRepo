@@ -1,10 +1,11 @@
 public class Gift {
-    private String name;
+    private char giver;
+    private String receiver;
+    private String content;
     private String wrapper;
     private String shape;
     private float prize;
     private String location;
-<<<<<<< HEAD
     public Gift(char giver,String receiver,String content,String wrapper,String shape,float prize,String location){
         this.giver = giver;
         this.receiver = receiver;
@@ -13,11 +14,6 @@ public class Gift {
         this.shape = shape;
         this.prize = prize;
         this.location = location;
-=======
-    public Gift(String name,String wrapper,String shape,float prize,String location){
-
-
->>>>>>> parent of f60b9d3 (create hideGifts and addGifts methods)
     }
     public char getGiver(){
         return giver;
