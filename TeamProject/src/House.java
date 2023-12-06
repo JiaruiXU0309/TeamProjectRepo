@@ -50,7 +50,7 @@ public class House {
         }
     }
 
-    public String listSpecificProduct(String location){
+    public String listSpecificGift(String location){
         if (isEmpty()) {
             return "No Gifts in the house";
         }
@@ -58,7 +58,7 @@ public class House {
             String str = "";
             for (int i = 0; i < total; i++) {
                 if (gifts[i].getLocation().equals(location))
-                    str += i + ": " + gifts[i] + "\n";
+                    str += (i+1) + ": " + gifts[i].toString() + "\n";
             }
             if (str.equals("")) {
                 return "No gift here, try other places";

@@ -28,7 +28,6 @@ public class Driver {
             input.nextLine();
             input.nextLine();
 
-            //display the main menu again
             option = mainMenu();
         }
         System.out.println("Exiting...bye");
@@ -52,7 +51,7 @@ public class Driver {
     char chosenCharacter;
 
     private void chooseCharacter() {
-        prologue();//see on Line 76
+        prologue();
 
 
         characterMenu();
@@ -177,6 +176,6 @@ public class Driver {
                  Which area do you want to explore? Please enter on the next line:
                 """);
         String location = input.nextLine();
-        System.out.println(house.listSpecificProduct(location));
+        System.out.println(house.listSpecificGift(location));
     }
 }
