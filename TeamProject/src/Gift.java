@@ -27,6 +27,7 @@ public class Gift {
         return "Gift{" +
                 "wrapper='" + wrapper + '\'' +
                 ", shape='" + shape + '\'' +
+                ", receiver='" + receiver + '\'' +
                 '}';
     }
 }

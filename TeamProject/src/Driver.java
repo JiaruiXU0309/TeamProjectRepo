@@ -8,6 +8,7 @@ public class Driver {
     }
 
     public Driver() {
+        house = new House();
         chooseCharacter();
         runMenu();
     }
@@ -177,5 +178,6 @@ public class Driver {
                 """);
         String location = input.nextLine();
         System.out.println(house.listSpecificGift(location));
+
     }
 }
