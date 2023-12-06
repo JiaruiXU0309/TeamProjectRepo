@@ -134,6 +134,7 @@ public class Driver {
         input.nextLine();
 
         char giver = chosenCharacter;
+        
         System.out.print("Enter the receiver:  ");
         String receiver = input.nextLine();
         System.out.print("Enter the Content inside the gift:  ");
@@ -152,6 +153,7 @@ public class Driver {
                     3) On the shelf
                     4) Behind the sofa cushion
                     5) Other places that you think can be used to hide
+                 Where do you want to hide this gift? Please enter on the next line:
                 """);
         input.nextLine();
         String location = input.nextLine();
