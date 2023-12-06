@@ -20,7 +20,7 @@ public class Driver {
 
             switch (option) {
                 case 1 -> hideGifts();
-                case 2 -> test();
+                case 2 -> findGifts();
                 case 3 -> characterMenu();
                 default -> System.out.println("Invalid option entered: " + option);
             }
@@ -118,7 +118,6 @@ public class Driver {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////
-
     private void hideGifts(){
         System.out.print("How many Gifts would you like to give?  ");
         int numberGifts = input.nextInt();
@@ -130,11 +129,12 @@ public class Driver {
             addGifts();
         }
     }
+
     private void addGifts() {
         input.nextLine();
 
         char giver = chosenCharacter;
-        
+
         System.out.print("Enter the receiver:  ");
         String receiver = input.nextLine();
         System.out.print("Enter the Content inside the gift:  ");
@@ -146,13 +146,12 @@ public class Driver {
         System.out.print("Enter the Prize of the gift:  ");
         float prize = input.nextFloat();
         System.out.print("""
-                 Location Menu
+                 Map
                  ---------
                     1) Under the Christmas tree
-                    2) By the hearth
+                    2) Near the hearth
                     3) On the shelf
                     4) Behind the sofa cushion
-                    5) Other places that you think can be used to hide
                  Where do you want to hide this gift? Please enter on the next line:
                 """);
         input.nextLine();
@@ -164,5 +163,20 @@ public class Driver {
         } else {
             System.out.println("No Gift Hidden");
         }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////
+    private void findGifts(){
+        input.nextLine();
+        System.out.print("""
+                 Map
+                 ---------
+                    1) Under the Christmas tree
+                    2) Near the hearth
+                    3) On the shelf
+                    4) Behind the sofa cushion
+                 Which area do you want to explore? Please enter on the next line:
+                """);
+        String location = input.nextLine();
+        System.out.println(house.listSpecificProduct(location));
     }
 }

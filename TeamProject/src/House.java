@@ -49,4 +49,23 @@ public class House {
             return listOfGifts;
         }
     }
+
+    public String listSpecificProduct(String location){
+        if (isEmpty()) {
+            return "No Gifts in the house";
+        }
+        else {
+            String str = "";
+            for (int i = 0; i < total; i++) {
+                if (gifts[i].getLocation().equals(location))
+                    str += i + ": " + gifts[i] + "\n";
+            }
+            if (str.equals("")) {
+                return "No gift here, try other places";
+            }
+            else {
+                return str;
+            }
+        }
+    }
 }
