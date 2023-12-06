@@ -2,6 +2,7 @@ public class House {
     private Gift[] gifts;
     int total = 0;
 
+    public House(){}
     public House(int total) {
         gifts = new Gift[total];
     }
@@ -52,7 +53,7 @@ public class House {
 
     public String listSpecificGift(String location){
         if (isEmpty()) {
-            return "No Gifts in the house";
+            return "No Gifts in the house, please choose one person to hide gift first";
         }
         else {
             String str = "";
