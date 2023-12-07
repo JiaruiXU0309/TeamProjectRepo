@@ -44,7 +44,7 @@ public class House {
         }
         else{
             String listOfGifts = "";
-            for(int i = 0; i < total; i++){
+            for(int i = 0; i < gifts.length; i++){
                 listOfGifts+= i + ": " + gifts[i] + "\n";
             }
             return listOfGifts;
@@ -57,7 +57,7 @@ public class House {
         }
         else {
             String str = "";
-            for (int i = 0; i < total; i++) {
+            for (int i = 0; i < gifts.length; i++) {
                 if (gifts[i].getLocation().equals(location))
                     str += (i+1) + ": " + gifts[i].toString() + "\n";
             }
@@ -68,5 +68,12 @@ public class House {
                 return str;
             }
         }
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    public int getTotal() {
+        return total;
     }
 }

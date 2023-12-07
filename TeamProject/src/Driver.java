@@ -124,13 +124,12 @@ public class Driver {
 
         house = new House(numberGifts);
 
-        //ask the user for the details of the products and add them to the order
         for (int i = 0; i < numberGifts; i++){
-            addGifts();
+            addGifts(house);
         }
     }
 
-    private void addGifts() {
+    private void addGifts(House house) {
         input.nextLine();
 
         char giver = chosenCharacter;
@@ -160,6 +159,7 @@ public class Driver {
         boolean isHidden = house.add(new Gift(giver, receiver, content, wrapper, shape, prize, location));
         if (isHidden) {
             System.out.println("Gifts Hidden Successfully");
+            house.setTotal(house.getTotal() + 1);
         } else {
             System.out.println("No Gift Hidden");
         }
@@ -178,6 +178,10 @@ public class Driver {
                 """);
         String location = input.nextLine();
         System.out.println(house.listSpecificGift(location));
+        openGift();
+    }
+
+    private void openGift(){
 
     }
 }
