@@ -23,6 +23,7 @@ public class Driver {
                 case 1 -> hideGifts();
                 case 2 -> findGifts();
                 case 3 -> characterMenu();
+                case 4 -> listGift();
                 default -> System.out.println("Invalid option entered: " + option);
             }
             System.out.println("\nPress enter key to continue...");
@@ -42,6 +43,7 @@ public class Driver {
                    1) Hide gifts
                    2) find gifts
                    3) Exchange the character
+                   4) check
                    0) Exit
                 ==>> """);
         int option = input.nextInt();
@@ -120,16 +122,16 @@ public class Driver {
     ///////////////////////////////////////////////////////////////////////////////////
     private void hideGifts(){
         System.out.print("How many Gifts would you like to give?  ");
-        int numberGifts = input.nextInt();
+        int more = input.nextInt();
 
-        house = new House(numberGifts);
+        house.setGifts(more+house.getTotal());
 
-        for (int i = 0; i < numberGifts; i++){
-            addGifts(house);
+        for (int i = house.getTotal(); i < house.getGifts(); i++){
+            addGifts();
         }
     }
 
-    private void addGifts(House house) {
+    private void addGifts() {
         input.nextLine();
 
         char giver = chosenCharacter;
@@ -159,10 +161,11 @@ public class Driver {
         boolean isHidden = house.add(new Gift(giver, receiver, content, wrapper, shape, prize, location));
         if (isHidden) {
             System.out.println("Gifts Hidden Successfully");
-            house.setTotal(house.getTotal() + 1);
-        } else {
-            System.out.println("No Gift Hidden");
+            //house.setTotal(house.getTotal());
         }
+        /*else {
+            System.out.println("No Gift Hidden");
+        }*/
     }
     ///////////////////////////////////////////////////////////////////////////////////
     private void findGifts(){
@@ -183,5 +186,10 @@ public class Driver {
 
     private void openGift(){
 
+    }
+
+    private void listGift(){
+        System.out.println("List of Products are:");
+        System.out.println(house.listGift());
     }
 }
