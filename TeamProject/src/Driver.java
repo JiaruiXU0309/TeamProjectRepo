@@ -58,8 +58,6 @@ public class Driver {
 
         characterMenu();
 
-
-
         if ( (chosenCharacter == 'e') || (chosenCharacter == 'E') ){
             System.out.println("Exiting...bye");
             System.exit(0);
@@ -126,9 +124,7 @@ public class Driver {
         System.out.print("How many Gifts would you like to give?  ");
         int more = input.nextInt();
 
-        house.setGifts(more+house.getTotal());
-
-        for (int i = house.getTotal(); i < house.getGifts(); i++){
+        for (int i = 0; i < more ; i++){
             addGifts();
         }
     }
@@ -163,11 +159,7 @@ public class Driver {
         boolean isHidden = house.add(new Gift(giver, receiver, content, wrapper, shape, prize, location));
         if (isHidden) {
             System.out.println("Gifts Hidden Successfully");
-            //house.setTotal(house.getTotal());
         }
-        /*else {
-            System.out.println("No Gift Hidden");
-        }*/
     }
     ///////////////////////////////////////////////////////////////////////////////////
     private void findGifts(){

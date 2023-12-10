@@ -1,14 +1,9 @@
 public class House {
-    public Gift[] gifts;
+    private Gift[] gifts = new Gift[12];
     private Gift[] specificGifts;
     int total = 0;
 
     public House(){}
-    /*public House(int total) {
-        gifts = new Gift[total];
-    }
-为House添加gift的数量*/
-
     private boolean isFull() {
         return total == gifts.length;
     }
@@ -44,7 +39,7 @@ public class House {
             return "No gifts here";
         }
         else{
-            String listOfGifts = "test";
+            String listOfGifts = "";
             for(int i = 0; i < gifts.length; i++){
                 listOfGifts+= i + ": " + gifts[i] + "\n";
             }
@@ -69,20 +64,5 @@ public class House {
                 return str;
             }
         }
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
-    public int getTotal() {
-        return total;
-    }
-
-    public void setGifts(int total) {
-        gifts = new Gift[total];
-    }
-
-    public int getGifts(){
-        return gifts.length;
     }
 }
