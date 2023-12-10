@@ -51,14 +51,14 @@ public class Driver {
     }
 
     //////////////////////////////////////////////////////////////////////////////////
-    char chosenCharacter;
+    String chosenCharacter;
 
     private void chooseCharacter() {
         prologue();
 
         characterMenu();
 
-        if ( (chosenCharacter == 'e') || (chosenCharacter == 'E') ){
+        if ( (chosenCharacter == "e") || (chosenCharacter == "E") ){
             System.out.println("Exiting...bye");
             System.exit(0);
         }
@@ -79,7 +79,7 @@ public class Driver {
                     4) Youngest child
                     0) Exit
                 ==>> """);
-        chosenCharacter = input.next().charAt(0);
+        chosenCharacter = input.nextLine();
     }
 
     //////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +132,7 @@ public class Driver {
     private void addGifts() {
         input.nextLine();
 
-        char giver = chosenCharacter;
+        String giver = chosenCharacter;
 
         System.out.print("Enter the receiver:  ");
         String receiver = input.nextLine();
@@ -163,25 +163,42 @@ public class Driver {
     }
     ///////////////////////////////////////////////////////////////////////////////////
     private void findGifts(){
-        input.nextLine();
-        System.out.print("""
-                 Map
-                 ---------
-                    1) Under the Christmas tree
-                    2) Near the hearth
-                    3) On the shelf
-                    4) Behind the sofa cushion
-                 Which area do you want to explore? Please enter on the next line:
-                """);
-        String location = input.nextLine();
-        System.out.println(house.listSpecificGift(location));
-        openGift();
+        while (true) {
+            input.nextLine();
+            System.out.print("""
+                     Map
+                     ---------
+                        1) Under the Christmas tree
+                        2) Near the hearth
+                        3) On the shelf
+                        4) Behind the sofa cushion
+                     Which area do you want to explore? Please enter on the next line:
+                    """);
+
+            String location = input.nextLine();
+            System.out.println(house.listSpecificGift(location));
+            openGift();
+            System.out.print("Do you want to continue searching for more gifts? (y/n): ");
+            char response = input.next().charAt(0);
+            if (response != 'y' && response != 'Y') {
+                break;
+            }
+        }
     }
 
     private void openGift(){
-
+        System.out.print("Please enter the number of the gift you want to open: ");
+        int giftIndex = input.nextInt() - 1;
+        if (giftIndex >= 0 && giftIndex < house.getSpecificLength()){
+            Gift spcificGift = house.getSpecificGifts(giftIndex);
+            System.out.println("You find the gift " +spcificGift.getContent()+" here");
+            System.out.println("It is from "+spcificGift.getGiver());
+        }
+        else {
+            System.out.println("Invalid input. Please try again.");
+        }
     }
-
+    ///////////////////////////////////////////////////////////////////////////////////
     private void listGift(){
         System.out.println("List of Products are:");
         System.out.println(house.listGift());

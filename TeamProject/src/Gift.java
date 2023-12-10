@@ -1,12 +1,12 @@
 public class Gift {
-    private char giver;
+    private String giver;
     private String receiver;
     private String content;
     private String wrapper;
     private String shape;
     private float prize;
     private String location;
-    public Gift(char giver,String receiver,String content,String wrapper,String shape,float prize,String location){
+    public Gift(String giver,String receiver,String content,String wrapper,String shape,float prize,String location){
         this.giver = giver;
         this.receiver = receiver;
         this.content = content;
@@ -15,7 +15,7 @@ public class Gift {
         this.prize = prize;
         this.location = location;
     }
-    public char getGiver(){return giver;}
+    public String getGiver(){return giver;}
     public String getReceiver(){return receiver;}
     public String getContent(){return content;}
     public String getWrapper(){return wrapper;}

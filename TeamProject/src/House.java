@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class House {
     private Gift[] gifts = new Gift[12];
-    private Gift[] specificGifts;
+    private Gift[] specificGifts = new Gift[0];
     int total = 0;
 
     public House(){}
@@ -54,8 +56,11 @@ public class House {
         else {
             String str = "";
             for (int i = 0; i < gifts.length; i++) {
-                if (gifts[i].getLocation().equals(location))
-                    str += (i+1) + ": " + gifts[i].toString() + "\n";
+                if (gifts[i].getLocation().equals(location)) {
+                    str += (i + 1) + ": " + gifts[i].toString() + "\n";
+                    specificGifts = Arrays.copyOf(specificGifts, specificGifts.length + 1);
+                    specificGifts[specificGifts.length - 1] = gifts[i];
+                }
             }
             if (str.equals("")) {
                 return "No gift here, try other places";
@@ -64,5 +69,13 @@ public class House {
                 return str;
             }
         }
+    }
+
+    public int getSpecificLength() {
+        return specificGifts.length;
+    }
+
+    public Gift getSpecificGifts(int index) {
+        return specificGifts[index];
     }
 }
