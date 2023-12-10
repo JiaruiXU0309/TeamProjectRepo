@@ -23,7 +23,6 @@ public class Driver {
                 case 1 -> hideGifts();
                 case 2 -> findGifts();
                 case 3 -> characterMenu();
-                case 4 -> listGift();
                 default -> System.out.println("Invalid option entered: " + option);
             }
             System.out.println("\nPress enter key to continue...");
@@ -43,7 +42,6 @@ public class Driver {
                    1) Hide gifts
                    2) find gifts
                    3) Exchange the character
-                   4) check
                    0) Exit
                 ==>> """);
         int option = input.nextInt();
@@ -79,14 +77,9 @@ public class Driver {
                     4) Youngest child
                     0) Exit
                 ==>> """);
+        input.nextLine();
         chosenCharacter = input.nextLine();
     }
-
-    //////////////////////////////////////////////////////////////////////////////////
-    private void test() {
-        System.out.println("Need to be created");
-    }
-
     //////////////////////////////////////////////////////////////////////////////////
     private void prologue() {
         try {
@@ -177,7 +170,10 @@ public class Driver {
 
             String location = input.nextLine();
             System.out.println(house.listSpecificGift(location));
+            if (house.listSpecificGift(location) != "No gift here, try other places"){
             openGift();
+            }
+
             System.out.print("Do you want to continue searching for more gifts? (y/n): ");
             char response = input.next().charAt(0);
             if (response != 'y' && response != 'Y') {
@@ -191,16 +187,12 @@ public class Driver {
         int giftIndex = input.nextInt() - 1;
         if (giftIndex >= 0 && giftIndex < house.getSpecificLength()){
             Gift spcificGift = house.getSpecificGifts(giftIndex);
-            System.out.println("You find the gift " +spcificGift.getContent()+" here");
+            System.out.println("You find " +spcificGift.getContent()+" here");
             System.out.println("It is from "+spcificGift.getGiver());
         }
         else {
             System.out.println("Invalid input. Please try again.");
         }
     }
-    ///////////////////////////////////////////////////////////////////////////////////
-    private void listGift(){
-        System.out.println("List of Products are:");
-        System.out.println(house.listGift());
-    }
+
 }

@@ -25,17 +25,6 @@ public class House {
         }
     }
 
-    public boolean reduce(Gift gift){
-        if (isEmpty()) {
-            return false;
-        }
-        else {
-            gifts[total] = gift;
-            total--;
-            return true;
-        }
-    }
-
     public String listGift() {
         if (isEmpty()) {
             return "No gifts here";
@@ -56,7 +45,7 @@ public class House {
         else {
             String str = "";
             for (int i = 0; i < gifts.length; i++) {
-                if (gifts[i].getLocation().equals(location)) {
+                if (gifts[i] != null && gifts[i].getLocation().equals(location)) {
                     str += (i + 1) + ": " + gifts[i].toString() + "\n";
                     specificGifts = Arrays.copyOf(specificGifts, specificGifts.length + 1);
                     specificGifts[specificGifts.length - 1] = gifts[i];
