@@ -56,16 +56,18 @@ public class Driver {
     private void chooseCharacter() {
         prologue();
 
-
         characterMenu();
 
-        System.out.println("\nPress enter key to continue...");
-        input.nextLine();
-        input.nextLine();
 
-        if (chosenCharacter == 0) {
+
+        if ( (chosenCharacter == 'e') || (chosenCharacter == 'E') ){
             System.out.println("Exiting...bye");
             System.exit(0);
+        }
+        else {
+            System.out.println("\nPress enter key to continue...");
+            input.nextLine();
+            input.nextLine();
         }
     }
 
