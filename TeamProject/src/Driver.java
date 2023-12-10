@@ -77,8 +77,8 @@ public class Driver {
                     4) Youngest child
                     0) Exit
                 ==>> """);
-        input.nextLine();
         chosenCharacter = input.nextLine();
+        input.nextLine();
     }
     //////////////////////////////////////////////////////////////////////////////////
     private void prologue() {
