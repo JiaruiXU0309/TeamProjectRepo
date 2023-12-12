@@ -56,7 +56,7 @@ public class Driver {
 
         characterMenu();
 
-        if ( (chosenCharacter == "e") || (chosenCharacter == "E") ){
+        if ( (chosenCharacter.charAt(0) == 'e') || (chosenCharacter.charAt(0) == 'E') ){
             System.out.println("Exiting...bye");
             System.exit(0);
         }
