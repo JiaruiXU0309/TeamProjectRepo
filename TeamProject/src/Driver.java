@@ -63,7 +63,7 @@ public class Driver {
         else {
             System.out.println("\nPress enter key to continue...");
             input.nextLine();
-            input.nextLine();
+            //input.nextLine();
         }
     }
 
@@ -78,7 +78,7 @@ public class Driver {
                     0) Exit
                 ==>> """);
         chosenCharacter = input.nextLine();
-        input.nextLine();
+        //input.nextLine();
     }
     //////////////////////////////////////////////////////////////////////////////////
     private void prologue() {
