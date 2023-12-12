@@ -45,10 +45,13 @@ public class House {
         else {
             String str = "";
             for (int i = 0; i < gifts.length; i++) {
-                if (gifts[i] != null && gifts[i].getLocation().equals(location)) {
-                    str += (i + 1) + ": " + gifts[i].toString() + "\n";
-                    specificGifts = Arrays.copyOf(specificGifts, specificGifts.length + 1);
-                    specificGifts[specificGifts.length - 1] = gifts[i];
+                if (gifts[i] != null) {
+                    boolean result = gifts[i].getLocation().contains(location);
+                    if (result) {
+                        str += (i + 1) + ": " + gifts[i].toString() + "\n";
+                        specificGifts = Arrays.copyOf(specificGifts, specificGifts.length + 1);
+                        specificGifts[specificGifts.length - 1] = gifts[i];
+                    }
                 }
             }
             if (str.equals("")) {
@@ -67,4 +70,5 @@ public class House {
     public Gift getSpecificGifts(int index) {
         return specificGifts[index];
     }
+
 }
