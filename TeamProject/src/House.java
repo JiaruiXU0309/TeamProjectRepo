@@ -5,7 +5,9 @@ public class House {
     private Gift[] specificGifts = new Gift[0];
     int total = 0;
 
-    public House(){}
+    public House() {
+    }
+
     private boolean isFull() {
         return total == gifts.length;
     }
@@ -17,8 +19,7 @@ public class House {
     public boolean add(Gift gift) {
         if (isFull()) {
             return false;
-        }
-        else {
+        } else {
             gifts[total] = gift;
             total++;
             return true;
@@ -28,27 +29,26 @@ public class House {
     public String listGift() {
         if (isEmpty()) {
             return "No gifts here";
-        }
-        else{
+        } else {
             String listOfGifts = "";
-            for(int i = 0; i < gifts.length; i++){
-                listOfGifts+= i + ": " + gifts[i] + "\n";
+            for (int i = 0; i < gifts.length; i++) {
+                listOfGifts += i + ": " + gifts[i] + "\n";
             }
             return listOfGifts;
         }
     }
 
-    public String listSpecificGift(String location){
+    public String listSpecificGift(String location) {
         if (isEmpty()) {
             return "No Gifts in the house, please choose one person to hide gift first";
-        }
-        else {
+        } else {
             String str = "";
+            int index = 1;
             for (int i = 0; i < gifts.length; i++) {
                 if (gifts[i] != null) {
                     boolean result = gifts[i].getLocation().contains(location);
                     if (result) {
-                        str += (i + 1) + ": " + gifts[i].toString() + "\n";
+                            str += (index++) + ": " + gifts[i].toString() + "\n";
                         specificGifts = Arrays.copyOf(specificGifts, specificGifts.length + 1);
                         specificGifts[specificGifts.length - 1] = gifts[i];
                     }
@@ -56,8 +56,7 @@ public class House {
             }
             if (str.equals("")) {
                 return "No gift here, try other places";
-            }
-            else {
+            } else {
                 return str;
             }
         }
@@ -70,5 +69,7 @@ public class House {
     public Gift getSpecificGifts(int index) {
         return specificGifts[index];
     }
+
+
 
 }
