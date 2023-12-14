@@ -63,11 +63,12 @@ public class Driver {
         else {
             System.out.println("\nPress enter key to continue...");
             input.nextLine();
-            //input.nextLine();
+            input.nextLine();
         }
     }
 
     private void characterMenu() {
+        input.nextLine();
         System.out.print("""
                  Character Menu
                  ---------
@@ -78,7 +79,6 @@ public class Driver {
                     0) Exit
                 ==>> """);
         chosenCharacter = input.nextLine();
-        //input.nextLine();
     }
     //////////////////////////////////////////////////////////////////////////////////
     private void prologue() {
